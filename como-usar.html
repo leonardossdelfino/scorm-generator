@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como usar SCORM GENERATOR</title>
+<meta name="description" content="Guia passo a passo da Bancada SCORM: importar, editar, colocar vídeo, montar o quiz e exportar o curso para o LMS.">
+
+<link rel="stylesheet" href="css/nunito.css">
+<link rel="stylesheet" href="css/bancada.css">
+<link rel="stylesheet" href="css/como-usar.css">
+</head>
+<body>
+
+<header class="topbar doc-top">
+  <div class="brand">SCORM GENERATOR <small>como usar</small></div>
+  <div class="spacer"></div>
+  <a class="btn btn-dark btn-sm" href="gerador-scorm.html">‹ Voltar para a Bancada</a>
+</header>
+
+<div class="doc-wrap">
+
+  <nav class="doc-nav" aria-label="Índice">
+    <h2>Nesta página</h2>
+    <ol>
+      <li><a href="#antes">Antes de começar</a></li>
+      <li><a href="#importar">Trazer o conteúdo</a></li>
+      <li><a href="#editar">Mexer nos slides</a></li>
+      <li><a href="#video">Colocar um vídeo</a></li>
+      <li><a href="#quiz">Montar o quiz</a></li>
+      <li><a href="#curso">A cara e as regras</a></li>
+      <li><a href="#exportar">Gerar o arquivo</a></li>
+      <li><a href="#continuar">Continuar amanhã</a></li>
+      <li><a href="#problemas">Quando dá errado</a></li>
+    </ol>
+  </nav>
+
+  <article class="doc">
+
+    <h1>Como usar SCORM GENERATOR</h1>
+    <p class="lead">Este programa foi criado com o intuito de facilitar a criação de cursos SCORM sem a necessidade de conhecimento técnico. A plataforma de treinamento usada foi a <strong>Knowbe4</strong> mas deve funcionar com outras plataformas que aceitam o formato SCORM.</p>
+
+    <h2>O que é SCORM?</h2>
+    <p>Se ninguém nunca te explicou: <strong>SCORM</strong> é um formato de
+    arquivo que algumas plataformas de treinamento sabem abrir, do mesmo jeito que
+    o Word abre <span class="ui">.docx</span>. <br>A plataforma costuma ser chamada
+    de <strong>LMS</strong> e o <strong>SCORM GENERATOR</strong> monta esse arquivo para você: entra o PDF
+    da sua apresentação, sai um <span class="ui">.zip</span> pronto para subir.</p>
+
+    <p>O caminho completo é curto: <strong>importa o PDF → ajusta → põe um vídeo
+    e um quiz → exporta</strong>. Os tópicos abaixo seguem exatamente essa
+    ordem.</p>
+
+
+    <h2 id="antes"><span class="n">1</span>Antes de começar</h2>
+
+    <p>Duas coisas que evitam dor de cabeça mais tarde.</p>
+
+    <h3>Nada é salvo sozinho</h3>
+    <p>Tudo acontece dentro do seu navegador. Nenhum arquivo seu sai do
+    computador, ótimo para privacidade, mas quer dizer que <strong>não existe
+    salvamento automático</strong>. Se você fechar a aba, o trabalho vai
+    embora.</p>
+    <p>Então: clique em <span class="ui">Salvar projeto</span> de vez em quando.
+    Ele baixa um arquivo <span class="ui">.json</span> com tudo dentro, e o
+    botão <span class="ui">Abrir</span> traz esse arquivo de volta depois.</p>
+
+    <div class="atencao">
+      <p><strong>Guarde esse .json num lugar que você lembre.</strong> É o seu
+      arquivo de trabalho, o equivalente ao <span class="ui">.pptx</span> de
+      uma apresentação. O <span class="ui">.zip</span> que você exporta no fim é
+      só o produto final.</p>
+    </div>
+
+    <h3>Não precisa de internet</h3>
+    <p>A aplicação funciona inteira offline, inclusive converter PDF e
+    gerar o <span class="ui">.zip</span>. Tudo de que ela precisa está dentro da
+    própria pasta, ou seja, pode rodar direto do seu computador via navegador.</p>
+    <p>O curso pronto também não depende de internet, com uma exceção, se você
+    usar vídeo por link, aí o aluno precisa de acesso ao YouTube ou Vimeo. Está
+    explicado no tópico do vídeo.</p>
+
+    <div class="atencao">
+      <p><strong>Mantenha a pasta inteira junta.</strong> O
+      <span class="ui">gerador-scorm.html</span> precisa das pastas
+      <span class="ui">css</span> e <span class="ui">js</span> que ficam ao lado
+      dele. Se você copiar só o arquivo <span class="ui">.html</span> para outro
+      lugar, a ferramenta abre sem estilo e sem funcionar. Copie ou compacte
+      <em>a pasta toda</em>.</p>
+    </div>
+
+
+    <h2 id="importar"><span class="n">2</span>Trazer o conteúdo</h2>
+
+    <p>Os botões de importar ficam embaixo da coluna da esquerda, a
+    <strong>Trilha</strong>, que é a lista de páginas na ordem em que o aluno
+    vai ver.</p>
+
+    <h3>De um PDF (o caminho mais comum)</h3>
+    <ol>
+      <li>Salve sua apresentação como PDF (PowerPoint ou Google Slides).</li>
+      <li>Clique em <span class="ui">Importar PDF…</span> e escolha o arquivo.</li>
+      <li>Espere. Cada página do PDF vira um slide, e a Bancada mostra o
+      progresso enquanto converte.</li>
+    </ol>
+    <p>Se o nome do curso ainda estiver como <span class="ui">Novo curso</span>,
+    ele passa a ser o nome do arquivo PDF. Você pode trocar no campo lá em
+    cima.</p>
+
+    <div class="dica">
+      <p><strong>Texto saindo borrado?</strong> Em
+      <span class="ui">Visão geral</span> existe
+      <span class="ui">Importação de PDF</span>, com a largura dos slides
+      (1280, 1600 ou 2000 px) e o formato. <strong>PNG</strong> deixa texto mais
+      nítido; <strong>JPEG</strong> deixa o arquivo menor. Escolha
+      <em>antes</em> de importar, a conversão usa o que estiver marcado no
+      momento.</p>
+    </div>
+
+    <h3>De imagens soltas</h3>
+    <p><span class="ui">Importar imagens…</span> aceita várias de uma vez, e elas
+    entram em ordem de nome de arquivo.</p>
+
+    <h3>De um curso que você já exportou</h3>
+    <p>Em <span class="ui">Visão geral</span>, o botão
+    <span class="ui">Abrir pacote SCORM existente…</span> lê um
+    <span class="ui">.zip</span> que a Bancada gerou e devolve tudo: slides,
+    quiz com as questões, cores, logo e até o vídeo em MP4. Útil quando você
+    perdeu o <span class="ui">.json</span> mas ainda tem o pacote.</p>
+
+    <div class="atencao">
+      <p><strong>Importar sempre acrescenta no fim da Trilha.</strong> Se você
+      importar o PDF de novo em cima de um curso montado, fica com os slides
+      antigos <em>e</em> os novos. Para trocar um slide só, não importe, use o
+      <span class="ui">Substituir imagem…</span> do próximo tópico.</p>
+    </div>
+
+
+    <h2 id="editar"><span class="n">3</span>Mexer nos slides</h2>
+
+    <p>Clique numa página da Trilha. O meio da tela mostra como ela vai ficar, e
+    a coluna da direita, o <strong>Inspetor</strong>, é onde você edita.</p>
+
+    <h3>Trocar a imagem de um slide</h3>
+    <p>Selecione o slide e clique em
+    <span class="ui">Substituir imagem…</span>. Ele troca só aquela imagem e
+    deixa tudo o mais no lugar: a posição na Trilha, o título, o quiz, as outras
+    páginas. É o caminho certo quando um slide saiu errado e você não quer
+    refazer o curso.</p>
+    <p>Só aceita imagem (PNG ou JPG), não PDF. Se o slide corrigido está num
+    PDF ou no PowerPoint, exporte <em>aquela página</em> como imagem primeiro,
+    no PowerPoint, <span class="ui">Salvar como → PNG</span> pergunta se você
+    quer só o slide atual.</p>
+
+    <h3>Mudar a ordem</h3>
+    <p>Duas formas, tanto faz:</p>
+    <ul>
+      <li><strong>Arrastando</strong> a página para o lugar novo, direto na Trilha.</li>
+      <li>Pelos botões <span class="ui">↑ Subir</span> e
+      <span class="ui">↓ Descer</span> do Inspetor.</li>
+    </ul>
+
+    <h3>Título da página</h3>
+    <p>Pode ficar vazio, e quase sempre fica. Se você escrever algo, aparece
+    discreto no cabeçalho do curso enquanto o aluno está naquela página.</p>
+
+    <h3>Apagar</h3>
+    <p><span class="ui">Excluir</span>, no fim do Inspetor. Ele pergunta antes.</p>
+
+    <div class="dica">
+      <p>O que aparece no meio da tela é <strong>prévia</strong>, não o curso
+      rodando. No quiz, por exemplo, a prévia marca a resposta correta em verde
+      só para você conferir, o aluno não vê isso.</p>
+    </div>
+
+
+    <h2 id="video"><span class="n">4</span>Colocar um vídeo</h2>
+
+    <p>Clique em <span class="ui">+ Página de vídeo</span>. Ela entra logo depois
+    da página que estiver selecionada. Depois, no Inspetor, você escolhe de onde
+    vem o vídeo — e essa escolha muda bastante coisa.</p>
+
+    <h3>Opção A: arquivo MP4 dentro do pacote</h3>
+    <p>Arraste o MP4 para a área indicada, ou clique para escolher. O vídeo vai
+    <em>dentro</em> do <span class="ui">.zip</span>: funciona sem internet, sem
+    anúncio e sem rastreamento.</p>
+    <p>O preço é o tamanho. Muitos LMS recusam upload acima de 100–250 MB, e a
+    Bancada te avisa quando o arquivo passa de 100 MB.</p>
+
+    <p>Só nesta opção aparecem as duas travas:</p>
+    <ul>
+      <li><span class="ui">Exigir assistir até o fim</span>, o botão
+      <span class="ui">Avançar</span> fica travado até o aluno chegar a 95% do
+      vídeo. E arrastar a barrinha para o fim não vale: o curso só conta o que
+      foi assistido de verdade, seguido.</li>
+      <li><span class="ui">Impedir avançar a barra</span>, impede pular para a
+      frente (voltar continua liberado).</li>
+    </ul>
+
+    <div class="atencao">
+      <p><strong>Se quiser travar de verdade, marque as duas.</strong> A trava
+      da barra sozinha não segura o aluno: ela só entra em ação junto com
+      <span class="ui">Exigir assistir até o fim</span>.</p>
+    </div>
+
+    <h3>Opção B: link do YouTube ou Vimeo</h3>
+    <p>Cole o endereço do vídeo. A Bancada reconhece os formatos normais do
+    YouTube (inclusive <span class="ui">youtu.be</span> e Shorts) e do Vimeo, e
+    mostra embaixo do campo o endereço que ela vai usar. Se aparecer
+    <span class="ui">URL não reconhecida</span>, confira o link.</p>
+    <p>O pacote fica pequeninho, mas o aluno precisa de internet liberada para
+    aquele site, e pode aparecer anúncio. <strong>As travas de assistir não
+    existem nesta opção</strong> — não há como saber se ele assistiu.</p>
+
+    <div class="dica">
+      <p><strong>A prévia do vídeo por link aparece em branco ou com erro
+      153?</strong> É normal, e não é problema do seu curso. Acontece porque
+      você abriu a Bancada com duplo clique no arquivo, e o YouTube recusa
+      prévias nessa situação. Dentro do LMS funciona. A própria tela explica
+      isso quando acontece.</p>
+    </div>
+
+
+    <h2 id="quiz"><span class="n">5</span>Montar o quiz</h2>
+
+    <p>Clique em <span class="ui">+ Quiz</span>. Ele entra no fim da Trilha, que
+    é onde uma avaliação costuma ficar mesmo. <strong>É um quiz por
+    curso</strong> — se você clicar de novo, a Bancada só te leva para o que já
+    existe.</p>
+
+    <h3>A nota mínima</h3>
+    <p>É o primeiro campo, porque é o mais mexido. Embaixo dele a Bancada faz a
+    conta para você: <em>"Com 10 questões, 70% exige 7 acertos."</em> Vale
+    conferir — com pouca questão, a porcentagem arredonda de um jeito que
+    surpreende.</p>
+
+    <h3>Título, subtítulo e abertura</h3>
+    <ul>
+      <li><strong>Título</strong> - aparece grande no topo do quiz.</li>
+      <li><strong>Subtítulo</strong> - a linha cinza embaixo. Deixando vazio,
+      ele se escreve sozinho, algo como <em>"10 questões · nota mínima 70% ·
+      nova tentativa liberada"</em>. Esse texto automático é o que aparece em
+      cinza dentro do campo.</li>
+      <li><strong>Texto de abertura</strong>,opcional, para instruções antes
+      das questões.</li>
+    </ul>
+
+    <h3>Escrever as questões</h3>
+    <ol>
+      <li>Clique em <span class="ui">+ Questão</span>.</li>
+      <li>Clique na barrinha da questão para abrir e fechar o editor dela.</li>
+      <li>Escreva o enunciado.</li>
+      <li>Escreva as alternativas e <strong>marque a bolinha da correta</strong>.
+      No mínimo duas alternativas, e exatamente uma correta.</li>
+      <li>Se quiser, escreva o feedback de acerto e de erro, o aluno lê depois
+      de enviar.</li>
+    </ol>
+    <p>Cada questão mostra uma etiqueta: <span class="ui">ok</span> quando está
+    completa, <span class="ui">!</span> quando falta enunciado, falta texto numa
+    alternativa ou a correta não está marcada. Enquanto houver
+    <span class="ui">!</span>, a exportação fica travada — então é uma
+    lista de pendências, não um enfeite.</p>
+
+    <h3>As cinco regras</h3>
+    <ul>
+      <li><span class="ui">Permitir nova tentativa se reprovar</span> — sem isso,
+      o aluno tem uma chance só.</li>
+      <li><span class="ui">Bloquear avanço enquanto reprovado</span> — ele não
+      passa do quiz sem ser aprovado.</li>
+      <li><span class="ui">Sortear a ordem das questões</span> — cada aluno vê
+      numa ordem diferente.</li>
+      <li><span class="ui">Mostrar revisão das respostas no fim</span> — depois
+      de enviar, ele vê o que marcou em cada questão.</li>
+      <li><span class="ui">Revelar a alternativa correta</span> — mostra também
+      qual era a certa. <strong>Só funciona junto com a revisão acima</strong>;
+      marcada sozinha, não faz nada.</li>
+    </ul>
+
+
+    <h2 id="curso"><span class="n">6</span>A cara e as regras do curso</h2>
+
+    <p>Clique em <span class="ui">Visão geral</span>, no alto da coluna da
+    esquerda. Aqui é o que vale para o curso inteiro.</p>
+
+    <ul>
+      <li><strong>Cor da marca</strong> - pinta o cabeçalho e os botões do
+      curso. Dá para escolher no quadradinho ou colar o código hexadecimal.</li>
+      <li><strong>Logo</strong> - aparece no cabeçalho, ao lado do nome.</li>
+      <li><strong>Versão do SCORM</strong> - veja abaixo.</li>
+      <li><strong>Mostrar barra de progresso</strong> - a listra fininha no topo
+      do curso.</li>
+      <li><strong>Navegação livre</strong> - marcando isso, o aluno anda para
+      onde quiser: <strong>desliga todas as travas</strong>, tanto a do vídeo
+      quanto a do quiz.</li>
+      <li><strong>Exigir aprovação no quiz para concluir</strong> - decide o que
+      o LMS vai registrar como "concluído": só ter visto tudo, ou ter visto tudo
+      <em>e</em> passado no quiz.</li>
+    </ul>
+
+    <h3>1.2 ou 2004?</h3>
+    <p>É a única escolha aqui que depende da plataforma da sua empresa, e não do
+    seu gosto:</p>
+    <ul>
+      <li><strong>SCORM 1.2</strong> - aceito por praticamente todo LMS. Na
+      dúvida, use este.</li>
+      <li><strong>SCORM 2004</strong> - registra progresso parcial (o LMS mostra
+      "60% do curso"), mas nem toda plataforma aceita.</li>
+    </ul>
+    <p>Se não souber qual, exporte os dois e teste</p>
+
+
+    <h2 id="exportar"><span class="n">7</span>Gerar o arquivo</h2>
+
+    <ol>
+      <li>Clique em <span class="ui">Exportar SCORM</span>, o botão azul.</li>
+      <li>Leia a lista que aparece. Ela é um check-up do curso:
+        <ul>
+          <li><strong>✓ verde</strong> - está tudo certo naquele item.</li>
+          <li><strong>! amarelo</strong> - é só um aviso, não impede nada.</li>
+          <li><strong>✗ vermelho</strong> - <strong>trava a exportação</strong>.
+          Precisa resolver.</li>
+        </ul>
+      </li>
+      <li>Clique em <span class="ui">Gerar .zip</span> e espere a compactação.</li>
+    </ol>
+
+    <p>O arquivo cai na sua pasta de downloads com um nome tipo
+    <span class="ui">treinamento-obrigatorio-pld-scorm2004.zip</span>. Esse é o
+    arquivo que você sobe no LMS. <strong>Não descompacte</strong>, a plataforma
+    quer o <span class="ui">.zip</span> do jeito que está.</p>
+
+    <div class="dica">
+      <p><strong>Teste antes de subir para valer.</strong> O
+      <a href="https://cloud.scorm.com" target="_blank" rel="noopener">SCORM
+      Cloud</a> tem conta gratuita e roda o pacote como um LMS de verdade: você
+      confere se a nota chega, se o progresso registra e se as travas funcionam.
+      Bem mais rápido que descobrir errado depois de publicar para a empresa
+      toda.</p>
+    </div>
+
+    <p>Se você abrir o <span class="ui">index.html</span> de dentro do zip no seu
+    computador, o curso roda, mas aparece um aviso
+    <span class="ui">fora do LMS · sem registro</span>. Isso está certo: sem uma
+    plataforma para conversar, não há onde gravar a nota.</p>
+
+
+    <h2 id="continuar"><span class="n">8</span>Parar agora e continuar amanhã</h2>
+
+    <ol>
+      <li>Clique em <span class="ui">Salvar projeto</span>. Baixa um
+      <span class="ui">.json</span>.</li>
+      <li>Amanhã, abra a Bancada e clique em <span class="ui">Abrir</span>.
+      Escolha aquele <span class="ui">.json</span>.</li>
+      <li>Está tudo de volta: slides, quiz, cores, regras.</li>
+    </ol>
+
+    <div class="atencao">
+      <p><strong>A exceção é o vídeo em MP4.</strong> O arquivo de vídeo não
+      entra no <span class="ui">.json</span>, um vídeo de 40 MB deixaria o
+      projeto gigante. Então guarde o MP4 na mesma pasta do
+      <span class="ui">.json</span>: ao reabrir, a Bancada avisa quais vídeos
+      estão faltando e você anexa de novo com um clique. Vídeo por link não tem
+      esse problema.</p>
+    </div>
+
+    <p>E <span class="ui">Criar novo</span> começa do zero. Ele pergunta antes,
+    mas depois de confirmar não tem como desfazer, salve primeiro se estiver na
+    dúvida.</p>
+
+
+    <h2 id="problemas"><span class="n">9</span>Quando dá errado</h2>
+
+    <h3>"Não consigo importar o PDF"</h3>
+    <p>Se apareceu um aviso dizendo que <strong>pdf.js não carregou</strong>, é a
+    pasta: confira se <span class="ui">js</span> e <span class="ui">css</span>
+    estão ao lado do <span class="ui">gerador-scorm.html</span>. Não é problema
+    de internet, a aplicação não usa rede.</p>
+    <p>Se a conversão simplesmente demora e parece travada num PDF grande, é
+    esperado quando você abre a ferramenta por duplo clique: nesse modo a
+    conversão roda na mesma thread da tela, então ela congela até terminar.
+    Espere; o contador de páginas volta a andar. Se incomodar, dá para servir a
+    pasta por HTTP, aí a tela continua respondendo.</p>
+    <p>Em último caso, exporte os slides como imagem no PowerPoint e use
+    <span class="ui">Importar imagens…</span>.</p>
+
+    <h3>"O botão Gerar .zip está apagado"</h3>
+    <p>Tem item <strong>✗ vermelho</strong> na lista. Os mais comuns: questão sem
+    enunciado, alternativa em branco, duas corretas marcadas na mesma questão,
+    ou uma página de vídeo sem arquivo nem link.</p>
+
+    <h3>"O LMS recusou o arquivo por tamanho"</h3>
+    <p>Quase sempre é o MP4. Duas saídas: comprimir o vídeo antes, ou trocar
+    para vídeo por link. A lista de exportação mostra o tamanho total da mídia,
+    e avisa quando passa de 100 MB.</p>
+
+    <h3>"Fechei a aba e perdi tudo"</h3>
+    <p>Se você tinha exportado o <span class="ui">.zip</span> alguma vez, dá para
+    recuperar: <span class="ui">Visão geral</span> →
+    <span class="ui">Abrir pacote SCORM existente…</span> reconstrói o curso a
+    partir dele. Se não tinha, infelizmente é refazer, e aí o hábito do
+    <span class="ui">Salvar projeto</span> vale ouro.</p>
+
+    <h3>"O aluno diz que a nota não apareceu no sistema"</h3>
+    <p>Confira, em <span class="ui">Visão geral</span>, se
+    <span class="ui">Exigir aprovação no quiz para concluir</span> está do jeito
+    que você quer, e se a versão do SCORM é a que sua plataforma aceita. Vale
+    também rodar o mesmo pacote no SCORM Cloud: se a nota chega lá e não chega
+    no seu LMS, o problema está na configuração da plataforma.</p>
+
+    <div class="dica">
+      <p>Uma coisa que é bom saber: as travas de vídeo e quiz são feitas para
+      <strong>organizar o percurso</strong>, não para segurar quem realmente
+      queira burlar, elas rodam no navegador do aluno. Para treinamento
+      obrigatório isso é mais que suficiente; só não conte com elas como
+      controle de segurança.</p>
+    </div>
+
+  </article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,183 @@
+/* =============================================================================
+   BANCADA SCORM — estilo da página de ajuda (como-usar.html)
+   =============================================================================
+
+   Carregada DEPOIS de bancada.css, de onde herda os tokens de cor, a Nunito e
+   as classes .topbar / .brand / .spacer / .btn. Aqui ficam só as regras de
+   documento.
+
+   As duas primeiras regras existem porque bancada.css é feito para uma tela de
+   aplicativo, que ocupa 100vh e não rola. Uma página de texto precisa do
+   contrário: altura livre e rolagem normal.
+
+   Sumário
+     documento ......... html,body override, .doc-top, .doc-wrap
+     índice lateral .... .doc-nav
+     texto ............. .doc h1..h3, p, ul, ol, .lead
+     apoios ............ .dica, .atencao, .ui (nome de botão da interface)
+     responsivo ........ @media (max-width:900px), @media print
+   ========================================================================== */
+
+/* ---------- documento: desfaz a moldura de app do bancada.css ---------- */
+html, body { height: auto; }
+body { background: var(--canvas); }
+
+.doc-top { position: sticky; top: 0; z-index: 10; }
+.doc-top .brand small { text-transform: lowercase; }
+
+.doc-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 26px 20px 80px;
+  display: grid;
+  grid-template-columns: 208px minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+}
+
+/* ---------- índice lateral ---------- */
+.doc-nav {
+  position: sticky;
+  top: 80px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.doc-nav h2 {
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin: 0 0 9px;
+}
+.doc-nav ol { list-style: none; margin: 0; padding: 0; counter-reset: n; }
+.doc-nav li { counter-increment: n; margin-bottom: 2px; }
+.doc-nav a {
+  display: flex;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: var(--r);
+  color: var(--ink2);
+  text-decoration: none;
+}
+.doc-nav a::before {
+  content: counter(n);
+  flex: 0 0 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  padding-top: 1px;
+}
+.doc-nav a:hover { background: var(--surface); color: var(--accent-ink); }
+
+/* ---------- texto ---------- */
+.doc {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 40px 46px 48px;
+  font-size: 15px;
+  line-height: 1.62;
+  color: var(--ink2);
+}
+.doc > *:first-child { margin-top: 0; }
+.doc > *:last-child { margin-bottom: 0; }
+
+.doc h1 {
+  font-size: 27px;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.doc .lead { font-size: 16.5px; color: var(--muted); margin: 0 0 8px; }
+
+.doc h2 {
+  font-size: 19px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 42px 0 12px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line2);
+  scroll-margin-top: 74px;   /* a topbar é sticky e cobriria o título */
+}
+.doc h2 .n {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-right: 7px;
+}
+.doc h3 {
+  font-size: 15.5px;
+  font-weight: 650;
+  color: var(--ink);
+  margin: 26px 0 8px;
+}
+
+.doc p { margin: 0 0 13px; }
+.doc ul, .doc ol { margin: 0 0 14px; padding-left: 22px; }
+.doc li { margin-bottom: 7px; }
+.doc li > ul, .doc li > ol { margin: 7px 0 0; }
+.doc ol { counter-reset: none; }
+.doc strong { color: var(--ink); font-weight: 650; }
+.doc a { color: var(--accent); }
+
+/* nome de um botão ou campo da interface, para o leitor achar na tela */
+.ui {
+  display: inline-block;
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 0 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* ---------- apoios ---------- */
+.dica, .atencao {
+  margin: 16px 0;
+  padding: 12px 15px;
+  border-radius: 0 var(--r) var(--r) 0;
+  font-size: 14px;
+}
+.dica > *:last-child, .atencao > *:last-child { margin-bottom: 0; }
+.dica {
+  background: var(--ok-soft);
+  border-left: 3px solid var(--ok);
+  color: #14543A;
+}
+.dica strong { color: var(--ok); }
+.atencao {
+  background: var(--warn-soft);
+  border-left: 3px solid var(--warn);
+  color: #6B4100;
+}
+.atencao strong { color: var(--warn); }
+
+/* ---------- responsivo ---------- */
+@media (max-width: 900px) {
+  .doc-wrap { grid-template-columns: 1fr; gap: 20px; padding: 16px 12px 60px; }
+  .doc-nav {
+    position: static;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .doc { padding: 26px 20px 32px; border-radius: 8px; }
+  .doc h1 { font-size: 23px; }
+  .doc h2 { font-size: 17.5px; margin-top: 32px; }
+}
+
+@media print {
+  .doc-top, .doc-nav { display: none; }
+  body { background: #fff; }
+  .doc-wrap { display: block; max-width: none; padding: 0; }
+  .doc { border: 0; padding: 0; font-size: 11pt; }
+  .doc h2 { page-break-after: avoid; }
+  .dica, .atencao { page-break-inside: avoid; }
+}
