@@ -378,11 +378,3 @@ Procedência, sha256 e como atualizar: [js/vendor/LEIA-ME.md](js/vendor/LEIA-ME.
 4. Round-trip: reabrir o `.zip` que a própria ferramenta gerou e conferir que slides,
    quiz, cores, logo e MP4 voltam
 5. Registro real: subir no SCORM Cloud e conferir progresso, nota e conclusão
-
-## Licenças
-
-As bibliotecas de terceiros mantêm suas licenças originais, listadas na tabela acima. A
-licença da fonte está em [css/nunito-OFL.txt](css/nunito-OFL.txt).
-
-O código do SCORM GENERATOR ainda não tem licença definida. Para publicar como projeto
-aberto, adicione um arquivo `LICENSE` na raiz do repositório.
